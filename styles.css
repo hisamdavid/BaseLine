@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome-message {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+  .logo-container {
+    margin-top: 0px;
+    opacity: 0;
+    /* Start fadeIn and pulse together immediately */
+    animation: fadeIn 2s forwards, pulse 2s infinite;
+    /* Removed base transition to avoid interfering with move transition */
+    /* transition: all 2s ease-in-out; */
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .fade-out {
+    animation: fadeOut 2s forwards;
+  }
+  /* When move-top is added, animate to the top center with a slower 2s transition */
+  .move-top {
+    position: fixed;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    margin-top: 0;
+    opacity: 1;
+    transition: top 2s ease-in-out, left 2s ease-in-out, transform 2s ease-in-out;
+    z-index: 1000;
+  }
+  /* Tooltip styling with white background to look like the logo is talking */
+  #press-tip {
+    margin-top: 10px;
+    font-size: 12px;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background: #fff;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  #press-tip.show {
+    display:block;
+    position: absolute;
+    left: 25%;
+    opacity: 1;
+  }
+  /* Circles container */
+  .circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 1.5s ease-out, opacity 1s ease-out;
+  }
+
+  .login-page {
+    display: none; 
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: none;
+  } 
+
+
+  .login-page.fade-in {
+    opacity: 1;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .login-form input[type="email"] {
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 2px solid #555;
+    background: transparent;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .login-form input[type="email"]:focus {
+    outline: none;
+    border-bottom-color: #fff;
+  }
+
+  .login-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .login-form button:hover {
+    background: #ddd;
+  }
+/* Position the button absolutely at the bottom right of the form */
+  #next-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  /* Hover effect for the button */
+  #next-btn:hover {
+    color: #ddd;
+  }
+
+  .main-container {
+    display: none;         /* Hidden by default */
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height:80vh;
+    overflow-y: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer 10+ */  
+    background: #000;     /* Same color as the page background */
+    transition: opacity 1s ease-in-out;
+  }
+
+  .main-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+
+  .main-container.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .xp-meter {
+    display: none;        /* Hidden by default */
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    z-index: 1100;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+  }
+  .xp-meter.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .xp-meter .xp-value {
+    font-size: 16px;
+  }
+  
+  .xp-meter .xp-change {
+    font-size: 14px;
+    color: #0f0;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
+  
+  .xp-meter .xp-change.show {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  
+  
+.content-section {
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.content-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content-section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Question Section */
+#question-section {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Options styling */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option {
+  background: #222;
+  color: #fff;
+  border: 2px solid transparent;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, border 0.3s;
+}
+
+.option:hover {
+  background: #333;
+}
+
+/* Style for the correct answer highlight */
+.option.correct {
+  border: 2px solid green;
+}
+
+
+/* Password Tester Section */
+#password-tester {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#password-tester input {
+  width: 50%;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 2px solid #555;
+  background: transparent;
+  font-size: 16px;
+  color: #fff;
+}
+
+#password-tester input:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+
+#password-tester p {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+}
