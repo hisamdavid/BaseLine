@@ -345,7 +345,6 @@ document.addEventListener("DOMContentLoaded", function() {
               <img src="recource/ZN_Active_01-02.png" style="position: absolute; top:10%; right:10%; width:60px; opacity:0; animation: popCircle 2s forwards 0.8s, rotate 10s linear infinite;">
               <img src="recource/ZN_Active_01-05.png" style="position: absolute; bottom:0%; right:-10%; width:100px; opacity:0; animation: popCircle 2s forwards 1.1s, rotate 10s linear infinite;">
             </div>
-            <div class="text-bubble">psst! come here</div>
           </div>`;
         mainContainer.appendChild(congratsPage);
         // Add event listener to heading to show small info message
