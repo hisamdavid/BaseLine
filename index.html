@@ -28,54 +28,193 @@
       </form>
     </div>
 
-    <div id="main-container" class="main-container">
-      <div id="social-engineering" class="content-section">
-        <h2>Social Engineering </h2>
-        <p>
-          Imagine a clever con artist who doesn't hack computers but hacks your trust! Social engineering is all about tricking you into giving away secrets, like a smooth talker convincing you to lend them your house key by asking for a cup of sugar.
-        </p>
+    <div id="main-container"  class="main-container" >
+      <!-- Wrap module 1 -->
+      <div id="module1" >
+        <div id="social-engineering" style="text-align: left;" class="content-section">
+          <h2>Social Engineering </h2>
+          <p>
+            Imagine a clever con artist who doesn't hack computers but hacks your trust! Social engineering is all about tricking you into giving away secrets, like a smooth talker convincing you to lend them your house key by asking for a cup of sugar.
+          </p>
+        </div>
+        <div id="question-section"  style="text-align: left;" class="content-section">
+          <h3>Quick Question</h3>
+          <p>Which of the following is a senario trying to trick you?</p>
+          <div class="options">
+            <button class="option" style="text-align: center;" data-correct="true"> you receve an email from ceo@iq.zian.com welcoming you and give you link to bording video </button>
+            <button class="option" style="text-align: center;" data-correct="false"> someone fallows you when you open the automatic door on the 7 floor </button>
+            <button class="option" style="text-align: center;" data-correct="false"> A coworker forgets their ID badge in the break room, and someone finds it and enters restricted areas after hours </button>
+            <button class="option" style="text-align: center;" data-correct="false"> You notice a stranger rummaging through the office’s discarded paperwork behind the building </button>
+          </div>
+        </div>
+        <!-- Next Module Button removed -->
+        <!-- <button id="next-module-btn">Next ></button> -->
       </div>
-      <div id="question-section" class="content-section">
-        <h3>Quick Question</h3>
-        <p>Which of the following is a senario trying to trick you?</p>
-        <div class="options">
-          <button class="option" data-correct="true"> you receve an email from ceo@iq.zian.com welcoming you and give you link to bording video </button>
-          <button class="option" data-correct="false"> someone fallows you when you open the automatic door on the 7 floor </button>
-          <button class="option" data-correct="false"> A coworker forgets their ID badge in the break room, and someone finds it and enters restricted areas after hours </button>
-          <button class="option" data-correct="false"> You notice a stranger rummaging through the office’s discarded paperwork behind the building </button>
+      <!-- Wrap module 2 and hide it initially -->
+      <div id="module2" style="display:none;">
+        <div id="password-hygiene" style="text-align: left;" class="content-section">
+          <h2>Password Hygiene</h2>
+          <p>
+            Good password hygiene is your first line of defense in the digital world, just like locking your front door. Using strong, unique passwords can keep hackers at bay and protect your personal information.
+          </p>
+          <p>
+            Best practices include:
+          </p>
+          <ul style="text-align: left;">
+            <li>Passwords should be long and complex.</li>
+            <li>Ensure the password is random.</li>
+            <li>Implement multi-factor authentication.</li>
+            <li>Do not reuse the same password.</li>
+          </ul>
+          <p>
+            By following these practices, you create a robust barrier against cyber attacks, keeping your digital identity safe!
+          </p>
+        </div>
+        <div id="password-tester" style="text-align: left;" class="content-section">
+          <h3>Password Tester</h3>
+          <div class="password-input-group">
+            <input type="text" id="password-input" placeholder="Enter your password">
+            <button id="submit-password">Submit</button>
+          </div>
         </div>
       </div>
-      <div id="password-hygiene" class="content-section">
-        <h2>Password Hygiene</h2>
-        <p>
-          Good password hygiene is your first line of defense in the digital world, just like locking your front door. Using strong, unique passwords can keep hackers at bay and protect your personal information.
-        </p>
-        <p>
-          Best practices include:
-        </p>
-        <ul style="text-align: left;">
-          <li>Passwords should be long and complex.</li>
-          <li>Ensure the password is random.</li>
-          <li>Implement multi-factor authentication.</li>
-          <li>Do not reuse the same password.</li>
-        </ul>
-        <p>
-          By following these practices, you create a robust barrier against cyber attacks, keeping your digital identity safe!
-        </p>
+      <!-- Insert new module for Device Security -->
+      <div id="module3" style="display:none;">
+        <div id="device-security" class="content-section" style="text-align: left;">
+          <h2>Device Security</h2>
+          <p>
+            Malware is malicious software designed to damage or gain unauthorized access to your devices.
+            Keeping your system updated, using antivirus software, and following safe browsing habits can help protect you.
+          </p>
+          <p>
+            Stay alert – a secure device is your best defense!
+          </p>
+          <!-- Updated malware examples section with table format -->
+          <div id="malware-examples">
+            <h3>Malware Examples: File Extensions</h3>
+            <table border="1" style="width:100%; color:#fff; text-align:left; border-collapse: collapse;">
+              <thead>
+                <tr>
+                  <th style="padding: 8px;">Safe Extensions</th>
+                  <th style="padding: 8px;">Harmful Extensions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px;">.pdf</td>
+                  <td style="padding: 8px;">.exe</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">.docx</td>
+                  <td style="padding: 8px;">.bat</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">.xlsx</td>
+                  <td style="padding: 8px;">.vbs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- New Spot the Malware game section added within module3 -->
+          <div id="spot-malware" class="content-section" style="text-align: left; margin-top: 20px;">
+            <h3>Spot the Malware Game</h3>
+            <p>Select the file that is infected with malware.</p>
+            <div id="file-container" style="display: flex; gap: 20px; flex-wrap: wrap;">
+              <div class="file-item" data-type="safe">
+                <img src="recource/pdf-icon.png" alt="PDF" style="width:50px;">
+                <p>Document1.pdf</p>
+              </div>
+              <div class="file-item" data-type="safe">
+                <img src="recource/image-icon.png" alt="Image" style="width:50px;">
+                <p>Image.png</p>
+              </div>
+              <div class="file-item" data-type="safe">
+                <img src="recource/ppt-icon.png" alt="Presentation" style="width:50px;">
+                <p>Presentation.pptx</p>
+              </div>
+              <div class="file-item" id="zip-file" data-type="zip">
+                <img src="recource/zip-icon.png" alt="Zip Archive" style="width:50px;">
+                <p>Archive.zip</p>
+              </div>
+            </div>
+            <!-- Container for zip contents -->
+            <div id="zip-contents" style="display: none; margin-top: 20px;">
+              <h4>Contents of Archive.zip</h4>
+              <div id="zip-files" style="display: flex; gap: 20px;">
+                <div class="zip-file-item" data-type="safe">
+                  <img src="recource/doc-icon.png" alt="Doc" style="width:40px;">
+                  <p>Report.docx</p>
+                </div>
+                <div class="zip-file-item" data-type="malware">
+                  <img src="recource/exe-icon.png" alt="Executable" style="width:40px;">
+                  <p>malware.exe</p>
+                </div>
+                <div class="zip-file-item" data-type="safe">
+                  <img src="recource/txt-icon.png" alt="Text" style="width:40px;">
+                  <p>Readme.txt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Next Module Button removed in module3 -->
       </div>
-      <div id="password-tester" class="content-section">
-        <h3>Password Tester</h3>
-        <input type="text" id="password-input" placeholder="Enter your password">
-        <p id="crack-time">Crack time: --</p>
+      <!-- Updated Module 4: Network Security with Integrated Wi‑Fi Game -->
+      <div id="module4" style="display:none;">
+        <div id="network-security" class="content-section" style="text-align: left;">
+          <h2>Network Security</h2>
+          <p>
+            Network security involves protecting data as it travels over networks and preventing unauthorized access to your systems.
+            Implementing strong firewalls, secure Wi‑Fi settings, and using VPNs are crucial to safeguard your network.
+          </p>
+          <p>Best practices include:</p>
+          <ul style="text-align: left;">
+            <li>Changing default passwords on routers and network devices</li>
+            <li>Enabling WPA3 (or at least WPA2) encryption on Wi‑Fi networks</li>
+            <li>Using a Virtual Private Network (VPN) for remote connections</li>
+            <li>Regularly updating firmware and monitoring network activity</li>
+          </ul>
+        </div>
+        <!-- New Wi‑Fi Networks Ordering Game integrated into Module 4 -->
+        <div id="wifi-game" class="content-section" style="text-align: center; margin-top: 20px;">
+          <h2>Wi‑Fi Security Challenge</h2>
+          <p>Drag and drop the Wi‑Fi networks to arrange them from most secure to least secure.</p>
+          <ul id="wifi-list" style="list-style-type: none; padding: 0;">
+
+            <li class="wifi-item" draggable="true" data-security="2" style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 5px; background: #222; border: 1px solid #444; cursor: grab;">
+              <img src="recource/wifi.png" alt="Zain Guest Logo" style="width:40px;">
+              <div class="wifi-text" style="text-align: left;">
+                 <strong>Zain-Guest</strong><br>
+                 <small>Open</small>
+              </div>
+            </li>
+            <li class="wifi-item" draggable="true" data-security="3" style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 5px; background: #222; border: 1px solid #444; cursor: grab;">
+              <img src="recource/wifi.png" alt="Office Logo" style="width:40px;">
+              <div class="wifi-text" style="text-align: left;">
+                 <strong>Office</strong><br>
+                 <small>WPA2</small>
+              </div>
+            </li>
+            <li class="wifi-item" draggable="true" data-security="4" style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 5px; background: #222; border: 1px solid #444; cursor: grab;">
+              <img src="recource/wifi.png" alt="Zain Logo" style="width:40px;">
+              <div class="wifi-text" style="text-align: left;">
+                 <strong>Zain</strong><br>
+                 <small>WPA3</small>
+              </div>
+            </li>
+            <li class="wifi-item" draggable="true" data-security="1" style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 5px; background: #222; border: 1px solid #444; cursor: grab;">
+              <img src="recource/wifi.png" alt="Cafe Logo" style="width:40px;">
+              <div class="wifi-text" style="text-align: left;">
+                 <strong>Cafe</strong><br>
+                 <small>Open</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button id="next-module-btn">Finish</button>
       </div>
-      
     </div>
-      
-    </div>
-  </div>
-  <div id="xp-meter" class="xp-meter">
-    <div class="xp-value">XP: 0</div>
-    <div class="xp-change" id="xp-change"></div>
+    <!-- New Skip button added at bottom right -->
   </div>
   
   <script src="script.js" defer></script>

@@ -42,6 +42,24 @@ body {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
   }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes popCircle {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .shake {
+    animation: shake 0.5s;
+  }
   .fade-out {
     animation: fadeOut 2s forwards;
   }
@@ -187,44 +205,6 @@ body {
     opacity: 1;
   }
   
-  .xp-meter {
-    display: none;        /* Hidden by default */
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    z-index: 1100;
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-  }
-  .xp-meter.show {
-    display: block;
-    opacity: 1;
-  }
-  
-  .xp-meter .xp-value {
-    font-size: 16px;
-  }
-  
-  .xp-meter .xp-change {
-    font-size: 14px;
-    color: #0f0;
-    opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
-    position: absolute;
-    top: 30px;
-    right: 0;
-  }
-  
-  .xp-meter .xp-change.show {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  
   
 .content-section {
   color: #fff;
@@ -287,7 +267,7 @@ body {
 }
 
 #password-tester input {
-  width: 50%;
+  flex: 1;
   padding: 10px 5px;
   border: none;
   border-bottom: 2px solid #555;
@@ -306,3 +286,96 @@ body {
   color: #fff;
   margin-top: 10px;
 }
+
+#submit-password {
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#next-module-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff; /* Add a minimalist border */
+    border-radius: 4px; /* Slightly rounded corners */
+    padding: 8px 16px; /* Add padding for a button-like appearance */
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px; 
+    display: block;  /* new: make button a block element */
+    margin: 10px auto; /* new: center button horizontally */
+}
+
+/* Add a hover effect to make it interactive */
+#next-module-btn:hover {
+    background: #fff; /* Change background to white on hover */
+}
+
+/* Add an active effect to simulate a press */
+#next-module-btn:active {
+    transform: scale(0.95); /* Slightly shrink the button when pressed */
+    opacity: 0.9; /* Add a subtle opacity change */
+}
+
+#module2 {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+#module2.fade-in {
+    opacity: 1;
+}
+#module1.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.password-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Updated submit button style to match the Next button design */
+#submit-password {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+#submit-password:hover {
+  background: #fff;
+  color: #000;
+}
+#submit-password:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+.wifi-item {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.wifi-item.dragging {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+/* New class to animate the dragged item out of its place */
+.wifi-item.dragged-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
