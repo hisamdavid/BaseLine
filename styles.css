@@ -391,5 +391,12 @@ body {
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  * {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
 
 
