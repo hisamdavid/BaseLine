@@ -382,9 +382,9 @@ body {
   .logo-container:not(.move-top) {
     margin: 0 !important;
     position: absolute;
-    top: 60% !important;
+    top: 50% !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -10%) !important;
   }
 }
 
