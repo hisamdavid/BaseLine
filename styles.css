@@ -379,12 +379,25 @@ body {
 
 
 @media only screen and (max-width: 480px) {
-  .smallContainer{
+  .smallContainer {
     margin: 0 !important;
     position: absolute;
-    top: 50% !important;
+    top: 50% !important; 
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
+  }
+  html, body {
+    min-height: -webkit-fill-available;
+    overflow: auto;
+  }
+  .container {
+    height: -webkit-fill-available;
+  }
+  /* New: Adjust logo size and centering on mobile */
+  #logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto;
   }
 }
 
