@@ -382,15 +382,9 @@ body {
   .logo-container:not(.move-top) {
     margin: 0 !important;
     position: absolute;
-    top: 50% !important;
+    top: 60% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-  }
-    html, body {
-    min-height: -webkit-fill-available;
-  }
-  .container {
-    height: -webkit-fill-available;
   }
 }
 
