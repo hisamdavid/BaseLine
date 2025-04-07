@@ -385,16 +385,8 @@ body {
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    padding-top: 40px;
+    padding-top: 100px;
   }
- .container{
-    margin: 0 !important;
-    position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    padding-bottom: 50px;
- }
 }
 
 
