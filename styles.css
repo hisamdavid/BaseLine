@@ -387,6 +387,15 @@ body {
     transform: translate(-50%, -50%) !important;
     padding-top: 20px;
   }
+ .container{
+    padding-top: 20px;
+    margin: 0 !important;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    padding-bottom: 20px;
+ }
 }
 
 
