@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
   zipFileItems.forEach(item => {
     item.addEventListener("click", function() {
       if(this.getAttribute("data-type") === "malware") {
-        alert("Correct! malware.exe is infected!");
+        alert("Correct! safe.exe is infected!");
         // Transition from module3 to module4:
         const module3 = document.getElementById("module3");
         module3.classList.add("fade-out");
